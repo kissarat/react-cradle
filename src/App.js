@@ -1,11 +1,12 @@
 import React from 'react';
 import './App.css';
+import Component from "./component";
 
-function App() {
+function App({ props }) {
   return (
     <div className="App">
       <h1>React Cradle</h1>
-      <p>Project skeleton for demonstration capabilities of component in development</p>
+      <Component {...props} />
     </div>
   );
 }
