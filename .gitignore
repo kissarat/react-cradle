@@ -29,6 +29,7 @@ yarn-error.log*
 # terraform
 *.tfstate
 *.tfstate.backup
+*.tfstate.lock.info
 deploy/*.pem
 deploy/.terraform
 deploy/variables.tf
