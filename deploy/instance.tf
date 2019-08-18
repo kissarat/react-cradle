@@ -25,17 +25,3 @@ resource "aws_eip" "first" {
     Name = "terraform-first"
   }
 }
-
-resource "aws_ebs_volume" "first" {
-  availability_zone = "${var.zone}"
-  size = 15
-  tags = {
-    Name = "terraform-first"
-  }
-}
-
-resource "aws_volume_attachment" "first" {
-  device_name = "/dev/sdh"
-  instance_id = "${aws_instance.first.id}"
-  volume_id = "${aws_ebs_volume.first.id}"
-}
