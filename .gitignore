@@ -20,6 +20,7 @@
 .idea
 .vscode
 
+archive
 *.zip
 *.gz
 npm-debug.log*
