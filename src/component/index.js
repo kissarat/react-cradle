@@ -1,8 +1,11 @@
 import React from 'react';
 import * as PropTypes from 'prop-types';
+import { Carousel } from 'react-responsive-carousel';
 
 export default function Component({className = 'component', children}) {
-    return <p className={className}>{children}</p>
+    return <div className={className}>
+        <Carousel>{children}</Carousel>
+    </div>
 }
 
 Component.propTypes = {

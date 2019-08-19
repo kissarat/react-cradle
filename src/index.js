@@ -6,23 +6,39 @@ import App from './App';
 
 const root = document.getElementById('root');
 
-window.render = function render(props) {
+function render(props) {
+    console.log(props);
     ReactDOM.render(<App props={props} />, root);
-};
+}
 
-window.render({
-    children: 'Project skeleton for demonstration capabilities of component in development'
-});
+function range(number) {
+    const result = [];
+    for(let i = 0; i < number; i++) {
+        result.push(i);
+    }
+    return result;
+}
 
-function generateContent(props) {
+function generateContent({number, ...props}) {
     return {
-        children: faker.lorem.text(),
+        children: range(number).map(i => (
+            <div key={i} className="slide">
+                <h3>{i}</h3>
+            </div>
+        )),
         ...props
     }
 }
 
+render(generateContent({
+    number: 15,
+    showArrows: false,
+    showStatus: false,
+    showIndicators: false,
+    showThumbs: false
+}));
+
 window.faker = faker;
-
-window.generate = (props = {}) => window.render(generateContent(props));
-
-window.intervalGenerate = (props = {}) => setInterval(() => window.generate(props), 800);
+window.render = render;
+window.generate = generateContent;
+window.intervalGenerate = (props = {}) => setInterval(() => render(generateContent(props)), 800);
