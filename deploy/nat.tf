@@ -1,7 +1,7 @@
 resource "aws_security_group" "web" {
   name = "web"
   description = "Web"
-  vpc_id = "${aws_vpc.default.id}"
+  vpc_id = aws_vpc.default.id
   tags = {
     Name = "web"
   }
