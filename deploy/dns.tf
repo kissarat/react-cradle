@@ -20,3 +20,11 @@ resource "aws_route53_record" "jenkins" {
   ttl = 100
   records = [aws_eip.first.public_ip]
 }
+
+resource "aws_route53_record" "react-slick" {
+  name = "react-slick.${var.hostname}"
+  type = "A"
+  zone_id = aws_route53_zone.first.id
+  ttl = 100
+  records = [aws_eip.first.public_ip]
+}

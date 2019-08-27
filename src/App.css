@@ -2,7 +2,17 @@
   text-align: center;
 }
 
-.slide {
+.slick-track {
+  white-space: nowrap;
+  border: 1px solid black;
+}
+
+.slick-slide {
+  display: inline-block;
+}
+
+.slide > div {
+  display: inline-block;
   width: 100px;
   height: 100px;
   background-color: green;

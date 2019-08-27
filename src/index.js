@@ -22,8 +22,10 @@ function range(number) {
 function generateContent({number, ...props}) {
     return {
         children: range(number).map(i => (
-            <div key={i} className="slide">
-                <h3>{i}</h3>
+            <div className="slide">
+                <div>
+                    <h3>{i + 1}</h3>
+                </div>
             </div>
         )),
         ...props
@@ -31,11 +33,7 @@ function generateContent({number, ...props}) {
 }
 
 render(generateContent({
-    number: 15,
-    showArrows: false,
-    showStatus: false,
-    showIndicators: false,
-    showThumbs: false
+    number: 7
 }));
 
 window.faker = faker;
